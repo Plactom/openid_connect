@@ -10,7 +10,6 @@ module OpenIDConnect
           attr_accessor :expected_issuer
           uri_attributes = {
             required: [
-              :issuer,
               :authorization_endpoint,
               :jwks_uri
             ],
@@ -26,6 +25,7 @@ module OpenIDConnect
             ]
           }
           attr_required(*(uri_attributes[:required] + [
+            :issuer,
             :response_types_supported,
             :subject_types_supported,
             :id_token_signing_alg_values_supported
